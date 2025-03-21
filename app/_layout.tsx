@@ -1,14 +1,12 @@
 import React from "react";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { View, StyleSheet, Platform, Dimensions } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { View, StyleSheet} from "react-native";
 import { useWindowDimensions } from "react-native";
 
 export default function RootLayout() {
-  const insets = useSafeAreaInsets();
-  const { width, height } = useWindowDimensions();
-  const isTablet = width >= 768; // Considérer comme tablette si largeur >= 768px
+  const { width } = useWindowDimensions();
+  const isTablet = width >= 768; //tablette si largeur >= 768px
 
   return (
     <View style={styles.container}>
@@ -17,16 +15,16 @@ export default function RootLayout() {
         screenOptions={{
           headerStyle: {
             backgroundColor: '#1E1E2E',
-            height: isTablet ? 70 : 56, // Header plus grand sur tablette
-          },
+            height: isTablet ? 70 : 56, 
+          } as any,
           headerTintColor: '#E4E4E6',
           headerTitleStyle: {
             fontWeight: 'bold',
-            fontSize: isTablet ? 22 : 18, // Texte plus grand sur tablette
+            fontSize: isTablet ? 22 : 18, 
           },
           contentStyle: {
             backgroundColor: '#121222',
-            paddingHorizontal: isTablet ? 24 : 16, // Plus d'espace sur tablette
+            paddingHorizontal: isTablet ? 24 : 16,
           },
           animation: 'fade_from_bottom',
           // Ajustements pour tablette

@@ -16,14 +16,14 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSubmit, editingProduit, onC
   const [prix, setPrix] = useState<string>('');
   const [quantite, setQuantite] = useState<string>('');
   
-  // États dialogue de confirmation
+  // State dialogue de confirmation
   const [dialogVisible, setDialogVisible] = useState<boolean>(false);
   const [dialogMessage, setDialogMessage] = useState<string>('');
   const [pendingData, setPendingData] = useState<Omit<Produit, 'id' | 'montant' | 'created_at'> | null>(null);
   // Dialogue pour validation des champs
   const [validationDialogVisible, setValidationDialogVisible] = useState<boolean>(false);
   
-  // État pour le toast
+  // State pour le toast
   const [toastVisible, setToastVisible] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>('');
 
@@ -47,7 +47,6 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSubmit, editingProduit, onC
 
   const handleSubmit = (): void => {
     if (!numProduit || !design || !prix || !quantite) {
-      // Afficher le dialogue de validation
       setValidationDialogVisible(true);
       return;
     }
@@ -80,7 +79,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSubmit, editingProduit, onC
         await onSubmit(pendingData);
         setDialogVisible(false);
         
-        // Afficher le toast de confirmation
+        //toast de confirmation
         setToastMessage(
           editingProduit 
             ? `Le produit "${pendingData.design}" a été mis à jour avec succès` 
@@ -90,7 +89,6 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSubmit, editingProduit, onC
         
         resetForm();
       } catch (error) {
-        // En cas d'erreur, on pourrait aussi afficher un toast d'erreur
         console.error("Erreur lors de la sauvegarde:", error);
       }
     }
