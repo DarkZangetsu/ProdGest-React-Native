@@ -1,0 +1,2 @@
+export const SUPABASE_URL = 'https://lkdkqbrugbidyhyqzpan.supabase.co';
+export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxrZGtxYnJ1Z2JpZHloeXF6cGFuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIyOTgwNTUsImV4cCI6MjA1Nzg3NDA1NX0.QkbpsbJCbkhvXgdlhOBGEUnrk6Ww_USHqUvs09PJQH8';
