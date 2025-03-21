@@ -1,4 +1,3 @@
-// components/ChartVisualization.tsx
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, useWindowDimensions, ScrollView } from 'react-native';
 import { BarChart, PieChart } from 'react-native-chart-kit';
