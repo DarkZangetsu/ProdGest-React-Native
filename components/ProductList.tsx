@@ -288,6 +288,7 @@ const ProductList: React.FC<ProductListProps> = ({ produits, onEdit, onDelete })
       );
       setFilteredProducts(filtered);
     }
+    confirmDelete
   }, [searchQuery, produits]);
 
   // Gérer la demande de suppression
